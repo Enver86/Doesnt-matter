@@ -5,72 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WINZONOW</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #0b1d47;
       color: white;
     }
-
     header {
       background: #163ea3;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      padding: 10px 20px;
     }
-
     header h1 {
       color: #ffcc00;
       margin: 0;
+      font-size: 1.5rem;
     }
-
     .btn {
-      padding: 8px 16px;
+      padding: 6px 14px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
-      margin-left: 10px;
+      margin-left: 8px;
     }
-
     .signup {
       background: #ffcc00;
       color: black;
     }
-
     .login {
       background: #f0f0f0;
       color: black;
     }
 
-    .layout {
+    .container {
       display: flex;
       flex-wrap: wrap;
     }
-
     aside {
-      width: 220px;
+      width: 200px;
       background: #09132d;
       padding: 20px;
       min-height: 100vh;
     }
-
     aside h2 {
-      font-size: 16px;
+      font-size: 1.1rem;
       margin-bottom: 12px;
       border-bottom: 1px solid #2e4a7b;
       padding-bottom: 6px;
     }
-
     aside ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
     aside li {
-      margin: 8px 0;
+      margin: 10px 0;
       cursor: pointer;
     }
 
@@ -78,50 +73,70 @@
       flex: 1;
       padding: 20px;
     }
-
-    h2.section-title {
-      font-size: 20px;
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h2 {
+      font-size: 1.3rem;
       margin-bottom: 16px;
     }
-
     .games {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
     }
-
     .game-card {
       background: #163ea3;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      transition: transform 0.2s;
     }
-
     .game-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
-
     .game-card img {
       width: 100%;
-      height: 140px;
+      height: 100px;
       object-fit: cover;
     }
-
     .game-card .title {
       text-align: center;
-      padding: 10px;
-      font-weight: bold;
+      padding: 8px 4px;
       background: #163ea3;
+      font-size: 0.9rem;
+    }
+
+    .providers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .provider-card {
+      background: #163ea3;
+      border-radius: 8px;
+      padding: 10px;
+      flex: 1 1 120px;
+      text-align: center;
+    }
+    .provider-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      aside {
+        display: none;
+      }
+      header h1 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>WINZONOW</h1>
     <div>
@@ -130,9 +145,7 @@
     </div>
   </header>
 
-  <!-- Layout -->
-  <div class="layout">
-    <!-- Sidebar -->
+  <div class="container">
     <aside>
       <h2>Others</h2>
       <ul>
@@ -146,49 +159,79 @@
       </ul>
     </aside>
 
-    <!-- Main -->
     <main>
-      <h2 class="section-title">New Launch</h2>
-      <div class="games">
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Mines">
-          <div class="title">Mines</div>
+      <section class="section new-launch">
+        <h2>New Launch</h2>
+        <div class="games">
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Mines">
+            <div class="title">Mines</div>
+          </div>
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1545289414-6f50d4d2e6d1?auto=format&fit=crop&w=600&q=80" alt="Aviator">
+            <div class="title">Aviator</div>
+          </div>
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1596797038530-1a2c92a95c8f?auto=format&fit=crop&w=600&q=80" alt="Pick 3">
+            <div class="title">Pick 3</div>
+          </div>
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1604079625133-7ed3b5828d18?auto=format&fit=crop&w=600&q=80" alt="Sky Fall">
+            <div class="title">Sky Fall</div>
+          </div>
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1556742040-3c52d6e88c62?auto=format&fit=crop&w=600&q=80" alt="Teen Patti">
+            <div class="title">Teen Patti</div>
+          </div>
         </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1545289414-6f50d4d2e6d1?auto=format&fit=crop&w=600&q=80" alt="Aviator">
-          <div class="title">Aviator</div>
+      </section>
+
+      <section class="section favourites">
+        <h2>My Favourites</h2>
+        <div class="games">
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1505691723518-36a1b4d9032d?auto=format&fit=crop&w=600&q=80" alt="Roulette">
+            <div class="title">Roulette</div>
+          </div>
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1564485374300-427f6a7d4a40?auto=format&fit=crop&w=600&q=80" alt="Duck Racing">
+            <div class="title">Duck Racing</div>
+          </div>
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1621361365424-8c66b6b6bbff?auto=format&fit=crop&w=600&q=80" alt="Blackjack">
+            <div class="title">Blackjack</div>
+          </div>
+          <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=600&q=80" alt="Rock Paper Scissors">
+            <div class="title">Rock Paper Scissors</div>
+          </div>
         </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1596797038530-1a2c92a95c8f?auto=format&fit=crop&w=600&q=80" alt="Pick 3">
-          <div class="title">Pick 3</div>
+      </section>
+
+      <section class="section providers">
+        <h2>Our Providers</h2>
+        <div class="providers">
+          <div class="provider-card">
+            <img src="https://via.placeholder.com/100x50?text=Provider1" alt="Provider 1">
+            <div>Provider 1</div>
+          </div>
+          <div class="provider-card">
+            <img src="https://via.placeholder.com/100x50?text=Provider2" alt="Provider 2">
+            <div>Provider 2</div>
+          </div>
+          <div class="provider-card">
+            <img src="https://via.placeholder.com/100x50?text=Provider3" alt="Provider 3">
+            <div>Provider 3</div>
+          </div>
+          <div class="provider-card">
+            <img src="https://via.placeholder.com/100x50?text=Provider4" alt="Provider 4">
+            <div>Provider 4</div>
+          </div>
         </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1604079625133-7ed3b5828d18?auto=format&fit=crop&w=600&q=80" alt="Sky Fall">
-          <div class="title">Sky Fall</div>
-        </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1556742040-3c52d6e88c62?auto=format&fit=crop&w=600&q=80" alt="Teen Patti">
-          <div class="title">Teen Patti</div>
-        </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1505691723518-36a1b4d9032d?auto=format&fit=crop&w=600&q=80" alt="Roulette">
-          <div class="title">Roulette</div>
-        </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1564485374300-427f6a7d4a40?auto=format&fit=crop&w=600&q=80" alt="Duck Racing">
-          <div class="title">Duck Racing</div>
-        </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1621361365424-8c66b6b6bbff?auto=format&fit=crop&w=600&q=80" alt="Blackjack">
-          <div class="title">Blackjack</div>
-        </div>
-        <div class="game-card">
-          <img src="https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=600&q=80" alt="Rock Paper Scissors">
-          <div class="title">Rock Paper Scissors</div>
-        </div>
-      </div>
+      </section>
+
     </main>
   </div>
-  
+
 </body>
 </html>
